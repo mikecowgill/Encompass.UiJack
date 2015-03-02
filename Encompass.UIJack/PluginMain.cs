@@ -37,7 +37,7 @@ namespace Encompass.UiJack
 
             Button b = new Button();
             b.Text = "This is a test";
-
+            b.Width = 200;
             e.LoanUi.LoanToolbarRight.Controls.Add(b);
 
         }
@@ -46,8 +46,7 @@ namespace Encompass.UiJack
         {
 
             Button b = new Button();
-            b.Text = "This is a test";
-
+            b.Text = "Test";
             e.PipelineUi.PipelineLowerToolbar.Controls.Add(b);
 
         }
@@ -67,10 +66,11 @@ namespace Encompass.UiJack
 
             tab.Controls.Add(pnl);
 
-            tabs.TabPages.Insert(0, tab);
+            tabs.TabPages.Add(tab);
 
             tabs.SelectedTab = tab;
         }
    
     }
+
 }

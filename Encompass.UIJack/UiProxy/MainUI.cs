@@ -11,8 +11,6 @@ namespace Encompass.UiJack.UiProxy
     public class MainUi
     {
 
-        private EllieMae.EMLite.MainUI.s mainUI;
-
         public MainUi()
         {
 
@@ -23,6 +21,7 @@ namespace Encompass.UiJack.UiProxy
 
         }
 
+        private EllieMae.EMLite.MainUI.s mainUI;
         public EllieMae.EMLite.MainUI.s MainUiControl
         {
             get { return mainUI; }

@@ -11,16 +11,15 @@ namespace Encompass.UiJack
 {
     public class UiJackMain
     {
-        
+
         public event HomeUiLoadedHandler HomeUiLoaded;
         public event PipelineUiLoadedHandler PipelineUiLoaded;
         public event LoanUiLoadedHandler LoanUiLoaded;
 
         public UiJackMain()
         {
-
-            mainUi = new MainUi();
-            var mainTabs = mainUi.MainTabs;
+            
+            var mainTabs = MainUi.MainTabs;
             
             foreach (TabPage tabPage in mainTabs.TabPages)
             {
@@ -115,7 +114,7 @@ namespace Encompass.UiJack
                 
                 if (pipelineUi == null)
                 {
-                    pipelineUi = new PipelineUi(mainUi.MainUiControl);
+                    pipelineUi = new PipelineUi(MainUi.MainUiControl);
                 }
                 return pipelineUi; 
             }
@@ -130,7 +129,7 @@ namespace Encompass.UiJack
 
                 if (homeUi == null)
                 {
-                    homeUi = new HomeUi(mainUi.MainUiControl);
+                    homeUi = new HomeUi(MainUi.MainUiControl);
                 }
                 return homeUi;
             }
@@ -145,13 +144,13 @@ namespace Encompass.UiJack
 
                 if (loanUi == null)
                 {
-                    loanUi = new LoanUi(mainUi.MainUiControl);
+                    loanUi = new LoanUi(MainUi.MainUiControl);
                 }
                 return loanUi;
             }
         }
 
-        MainUi mainUi;
+        private MainUi mainUi;
         public MainUi MainUi
         {
             get
@@ -164,6 +163,6 @@ namespace Encompass.UiJack
                 return mainUi;
             }
         }
-        
+
     }
 }
