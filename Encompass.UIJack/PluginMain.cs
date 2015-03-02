@@ -24,19 +24,12 @@ namespace Encompass.UiJack
 
             uiJack = new UiJackMain();
             uiJack.PipelineUiLoaded += uiJack_PipelineUiLoaded;
-            uiJack.HomeUiLoaded += uiJack_HomeUiLoaded;
             uiJack.LoanUiLoaded += uiJack_LoanUiLoaded;
 
             var tabs = uiJack.MainUi.MainTabs;
-            var menu = uiJack.MainUi.MainMenu;
+            
+            AddCustomTab(tabs);
 
-            //menu.Items.Add("New Menu Item");
-            //AddCustomTab(tabs);
-
-            EncompassApplication.Login += EncompassApplication_Login;
-
-            var test = uiJack.HomeUi.HomePageBrowser;
-            test.Enabled = false;
         }
 
         private void uiJack_LoanUiLoaded(object source, LoanUiLoadedEventArgs e)
@@ -48,40 +41,17 @@ namespace Encompass.UiJack
             e.LoanUi.LoanToolbarRight.Controls.Add(b);
 
         }
-
-        private void uiJack_HomeUiLoaded(object source, HomeUiLoadedEventArgs e)
-        {
-            var test = e.HomeUi.HomePageBrowser;
-            test.Enabled = false;
-            
-        }
-
+        
         private void uiJack_PipelineUiLoaded(object source, PipelineUiLoadedEventArgs e)
         {
+
             Button b = new Button();
             b.Text = "This is a test";
 
-            e.PipelineUi.PipelineMiddleToolbar.Controls.Add(b);
-
-        }
-
-        void EncompassApplication_LoanClosing(object sender, EventArgs e)
-        {
-            
-        }
-
-        void EncompassApplication_LoanOpened(object sender, EventArgs e)
-        {
+            e.PipelineUi.PipelineLowerToolbar.Controls.Add(b);
 
         }
         
-        private void EncompassApplication_Login(object sender, EventArgs e)
-        {
-
-            
-            
-        }
-
         private static void AddCustomTab(TabControl tabs)
         {
             TabPage tab = new TabPage();
